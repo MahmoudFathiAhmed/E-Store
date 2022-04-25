@@ -13,8 +13,8 @@ class ColorManager{
   static Color offWhite1 = const Color(0xffF3F3F3);
   static Color grey = const Color(0xffA6A6A6);
   static Color grey1 = const Color(0xffA3A3A3);
-  static Color grey2 = const Color(0xff656565);
-  static Color grey3 = const Color(0xff707070);
+  static Color grey2 = const Color(0xff707070);
+  static Color grey3 = const Color(0xff656565);
   static Color onBlack = const Color(0xff323232);
   static Color onBlack2 = const Color(0xff3C3C3C);
   static Color onBlack3 = const Color(0xff434343);
