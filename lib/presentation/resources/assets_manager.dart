@@ -3,6 +3,10 @@ const String jsonPath = "assets/json";
 
 class ImageAssets{
   static const String splashLogo = "$imagePath/splash_logo.png";
+  static const String splashIcon = "$imagePath/splash_icon.png";
+  static const String men = "$imagePath/men.png";
+  static const String women = "$imagePath/women.png";
+  static const String creditCard = "$imagePath/credit_card.png";
 
   static const String onBoardingLogo1 = "$imagePath/onboarding_logo1.svg";
   static const String onBoardingLogo2 = "$imagePath/onboarding_logo2.svg";
@@ -25,6 +29,19 @@ class ImageAssets{
   static const String notificationsIc = "$imagePath/notifications_ic.svg";
   static const String searchIc = "$imagePath/search_ic.svg";
   static const String settingsIc = "$imagePath/settings_ic.svg";
+
+  static const String cancel = "$imagePath/cancel.svg";
+  static const String filter = "$imagePath/filter.svg";
+  static const String leftArrow = "$imagePath/left_arrow.svg";
+  static const String leftArrow2 = "$imagePath/left_arrow2.svg";
+  static const String menuBar = "$imagePath/menu_bar.svg";
+  static const String notification = "$imagePath/notification.svg";
+  static const String notificationOn = "$imagePath/notification_on.svg";
+  static const String passwordVisible = "$imagePath/password_visible.svg";
+  static const String search = "$imagePath/search.svg";
+  static const String like = "$imagePath/like.svg";
+  static const String likeIcon = "$imagePath/like_icon.svg";
+
 }
 
 class JsonAssets{
