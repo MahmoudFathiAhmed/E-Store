@@ -37,6 +37,12 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorManager.white,
+      appBar: AppBar(
+        elevation: AppSize.s0,
+        backgroundColor: ColorManager.white,
+        iconTheme: IconThemeData(color: ColorManager.primary,),
+      ),
       body: StreamBuilder<FlowState>(
         stream: _viewModel.outputState,
         builder: (context, snapshot){
@@ -59,7 +65,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
           key: _formKey,
           child: Column(
             children: [
-              const Image(image: AssetImage(ImageAssets.splashLogo),),
+              const Image(image: AssetImage(ImageAssets.splashIcon),),
               const SizedBox(height: AppSize.s28,),
               Padding(
                 padding: const EdgeInsets.only(left: AppPadding.p28, right: AppPadding.p28),
@@ -74,6 +80,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                           labelText: AppStrings.emailHint.tr(),
                           errorText: (snapshot.data ?? true)? null:AppStrings.invalidEmail.tr()
                       ),
+                      style: Theme.of(context).textTheme.labelSmall,
                     );
                   },
                 ),
@@ -104,9 +111,9 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
     );
   }
 
-  // @override
-  // void dispose() {
-  //   _viewModel.dispose();
-  //   super.dispose();
-  // }
+  @override
+  void dispose() {
+    _viewModel.dispose();
+    super.dispose();
+  }
   }

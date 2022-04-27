@@ -1,3 +1,3 @@
-class ProductsViewModel{
-
-}
+// class ProductsViewModel{
+//
+// }

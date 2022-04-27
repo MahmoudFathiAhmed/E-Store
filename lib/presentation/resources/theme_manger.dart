@@ -36,7 +36,6 @@ ThemeData getApplicationTheme(){
       buttonColor: ColorManager.primary,
       splashColor: ColorManager.lightPrimary,
     ),
-
     //elevated button theme
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
@@ -51,30 +50,21 @@ ThemeData getApplicationTheme(){
 
     //text theme
     textTheme: TextTheme(
-      displayLarge: getRegularStyle(color: ColorManager.onBlack1, fontSize: FontSize.s30),
-      displayMedium: getRegularStyle(color: ColorManager.onBlack2, fontSize: FontSize.s25),
-      displaySmall: getRegularStyle(color: ColorManager.grey3, fontSize: FontSize.s24),
-      headlineLarge: getSemiBoldStyle(color: ColorManager.grey2, fontSize: FontSize.s22),
-      headlineMedium: getRegularStyle(color: ColorManager.grey5, fontSize: FontSize.s22),
-      headlineSmall: getSemiBoldStyle(color: ColorManager.white, fontSize: FontSize.s20),
-      titleLarge: getSemiBoldStyle(color: ColorManager.onBlack, fontSize: FontSize.s20),
-      titleMedium: getRegularStyle(color: ColorManager.grey2,fontSize: FontSize.s20),
-      titleSmall: getRegularStyle(color: ColorManager.primary,fontSize: FontSize.s20),
-      labelLarge: getSemiBoldStyle(color: ColorManager.onBlack,fontSize: FontSize.s18),
-      labelMedium: getRegularStyle(color: ColorManager.grey2,fontSize: FontSize.s18),
-      labelSmall: getRegularStyle(color: ColorManager.onBlack,fontSize: FontSize.s18),
-      headline1: getRegularStyle(color: ColorManager.white,fontSize: FontSize.s18),
-      headline2: getRegularStyle(color: ColorManager.grey6,fontSize: FontSize.s17),
-      headline3: getSemiBoldStyle(color: ColorManager.grey5,fontSize: FontSize.s16),
-      headline4: getRegularStyle(color: ColorManager.white,fontSize: FontSize.s16),
-      headline5: getRegularStyle(color: ColorManager.grey5,fontSize: FontSize.s16),
-      headline6: getRegularStyle(color: ColorManager.primary,fontSize: FontSize.s16),
-      subtitle1: getSemiBoldStyle(color: ColorManager.primary,fontSize: FontSize.s15),
-      subtitle2: getSemiBoldStyle(color: ColorManager.white,fontSize: FontSize.s14),
-      bodyText1: getRegularStyle(color: ColorManager.grey,fontSize: FontSize.s14),
-      bodyText2: getRegularStyle(color: ColorManager.grey6,fontSize: FontSize.s14),
-      caption: getSemiBoldStyle(color: ColorManager.white,fontSize: FontSize.s10),
-      button: getRegularStyle(color: ColorManager.primary,fontSize: FontSize.s10),
+      displayLarge: getRegularStyle(color: ColorManager.onBlack1,fontSize: FontSize.s30),
+      displayMedium: getRegularStyle(color: ColorManager.grey3,fontSize: FontSize.s25),
+      displaySmall: getSemiBoldStyle(color: ColorManager.grey2, fontSize: FontSize.s22),
+      headlineLarge: getRegularStyle(color: ColorManager.grey5,fontSize: FontSize.s22),
+      headlineMedium: getSemiBoldStyle(color: ColorManager.white,fontSize: FontSize.s20),
+      headlineSmall: getRegularStyle(color: ColorManager.primary,fontSize: FontSize.s20),
+      titleLarge: getRegularStyle(color: ColorManager.onBlack,fontSize: FontSize.s18),
+      titleMedium: getRegularStyle(color: ColorManager.white,fontSize: FontSize.s18),
+      titleSmall: getSemiBoldStyle(color: ColorManager.grey5,fontSize: FontSize.s16),
+      labelLarge: getRegularStyle(color: ColorManager.white,fontSize: FontSize.s16),
+      labelMedium: getRegularStyle(color: ColorManager.primary,fontSize: FontSize.s16),
+      labelSmall: getSemiBoldStyle(color: ColorManager.primary,fontSize: FontSize.s15),
+      bodyLarge: getSemiBoldStyle(color: ColorManager.white,fontSize: FontSize.s14),
+      bodyMedium: getRegularStyle(color: ColorManager.grey,fontSize: FontSize.s14),
+      bodySmall: getRegularStyle(color: ColorManager.primary,fontSize: FontSize.s10),
     ),
 
     //inputDecoration theme (text form field)

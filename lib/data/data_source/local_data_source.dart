@@ -28,18 +28,18 @@ const CACHE_ELECTRONICS_INTERVAL = 60 * 1000; // 1 minute cache
 //end of store
 
 abstract class LocalDataSource{
-  Future<HomeResponse> getHomeData();
-
-  Future<void> saveHomeToCache(HomeResponse homeResponse);
+  // Future<HomeResponse> getHomeData();
+  //
+  // Future<void> saveHomeToCache(HomeResponse homeResponse);
 
   void clearCache();
 
   void removeFromCache(String key);
 
 
-  Future<StoreDetailsResponse> getStoreDetails();
-
-  Future<void> saveStoreDetailsToCache(StoreDetailsResponse storeDetailsResponse);
+  // Future<StoreDetailsResponse> getStoreDetails();
+  //
+  // Future<void> saveStoreDetailsToCache(StoreDetailsResponse storeDetailsResponse);
 
 //store
   Future<ProductsResponse> getProducts();
@@ -62,23 +62,23 @@ abstract class LocalDataSource{
 class LocalDataSourceImpl implements LocalDataSource{
   //run time cache
   Map<String, CachedItem> cacheMap = Map();
-  @override
-  Future<HomeResponse> getHomeData() async{
-    CachedItem? cachedItem = cacheMap[CACHE_HOME_KEY];
+  // @override
+  // Future<HomeResponse> getHomeData() async{
+  //   CachedItem? cachedItem = cacheMap[CACHE_HOME_KEY];
+  //
+  //   if(cachedItem != null && cachedItem.isValid(CACHE_HOME_INTERVAL)){
+  //     //return the response from cache
+  //     return cachedItem.data;
+  //   }else{
+  //     // return an error that cache is not there or it's not valid
+  //     throw ErrorHandler.handle(DataSource.CACHE_ERROR);
+  //   }
+  // }
 
-    if(cachedItem != null && cachedItem.isValid(CACHE_HOME_INTERVAL)){
-      //return the response from cache
-      return cachedItem.data;
-    }else{
-      // return an error that cache is not there or it's not valid
-      throw ErrorHandler.handle(DataSource.CACHE_ERROR);
-    }
-  }
-
-  @override
-  Future<void> saveHomeToCache(HomeResponse homeResponse) async{
-    cacheMap[CACHE_HOME_KEY]= CachedItem(homeResponse);
-  }
+  // @override
+  // Future<void> saveHomeToCache(HomeResponse homeResponse) async{
+  //   cacheMap[CACHE_HOME_KEY]= CachedItem(homeResponse);
+  // }
 
   @override
   void clearCache() {
@@ -90,23 +90,23 @@ class LocalDataSourceImpl implements LocalDataSource{
     cacheMap.remove(key);
   }
 
-  @override
-  Future<StoreDetailsResponse> getStoreDetails() async{
-    CachedItem? cachedItem = cacheMap[CACHE_STORE_DETAILS_KEY];
-
-    if(cachedItem != null && cachedItem.isValid(CACHE_STORE_DETAILS_INTERVAL)){
-      //return the response from cache
-      return cachedItem.data;
-    }else{
-      // return an error that cache is not there or it's not valid
-      throw ErrorHandler.handle(DataSource.CACHE_ERROR);
-    }
-  }
-
-  @override
-  Future<void> saveStoreDetailsToCache(StoreDetailsResponse storeDetailsResponse) async{
-    cacheMap[CACHE_STORE_DETAILS_KEY]= CachedItem(storeDetailsResponse);
-  }
+  // @override
+  // Future<StoreDetailsResponse> getStoreDetails() async{
+  //   CachedItem? cachedItem = cacheMap[CACHE_STORE_DETAILS_KEY];
+  //
+  //   if(cachedItem != null && cachedItem.isValid(CACHE_STORE_DETAILS_INTERVAL)){
+  //     //return the response from cache
+  //     return cachedItem.data;
+  //   }else{
+  //     // return an error that cache is not there or it's not valid
+  //     throw ErrorHandler.handle(DataSource.CACHE_ERROR);
+  //   }
+  // }
+  //
+  // @override
+  // Future<void> saveStoreDetailsToCache(StoreDetailsResponse storeDetailsResponse) async{
+  //   cacheMap[CACHE_STORE_DETAILS_KEY]= CachedItem(storeDetailsResponse);
+  // }
 
 
   //store

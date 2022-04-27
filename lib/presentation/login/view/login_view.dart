@@ -72,7 +72,7 @@ class _LoginViewState extends State<LoginView> {
             key: _formKey,
             child: Column(
               children: [
-                const Center(child: Image(image: AssetImage(ImageAssets.splashLogo),)),
+                const Center(child: Image(image: AssetImage(ImageAssets.splashIcon),)),
                 const SizedBox(height: AppSize.s28,),
                 Padding(
                   padding: const EdgeInsets.only(left: AppPadding.p28, right: AppPadding.p28),
@@ -87,6 +87,7 @@ class _LoginViewState extends State<LoginView> {
                         labelText: AppStrings.username.tr(),
                         errorText: (snapshot.data ?? true)? null:AppStrings.usernameError.tr()
                       ),
+                      style: Theme.of(context).textTheme.labelSmall,
                     );
                   },
                   ),
@@ -105,6 +106,7 @@ class _LoginViewState extends State<LoginView> {
                             labelText: AppStrings.password.tr(),
                             errorText: (snapshot.data ?? true)? null:AppStrings.passwordError.tr()
                         ),
+                        style: Theme.of(context).textTheme.labelSmall,
                       );
                     },
                   ),
@@ -143,7 +145,7 @@ class _LoginViewState extends State<LoginView> {
                         },
                         child: Text(
                           AppStrings.forgetPassword.tr(),
-                          style: Theme.of(context).textTheme.titleMedium,
+                          style: Theme.of(context).textTheme.labelSmall,
                         ),
                       ),
                       TextButton(
@@ -152,7 +154,7 @@ class _LoginViewState extends State<LoginView> {
                         },
                         child: Text(
                           AppStrings.registerText.tr(),
-                          style: Theme.of(context).textTheme.titleMedium,
+                          style: Theme.of(context).textTheme.labelSmall,
                         ),
                       ),
                     ],

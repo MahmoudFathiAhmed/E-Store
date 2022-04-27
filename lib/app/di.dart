@@ -16,9 +16,9 @@ import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../data/data_source/local_data_source.dart';
-import '../domain/usecase/home_usecase.dart';
+// import '../domain/usecase/home_usecase.dart';
 import '../domain/usecase/register_usecase.dart';
-import '../domain/usecase/store_details_usecase.dart';
+// import '../domain/usecase/store_details_usecase.dart';
 import '../domain/usecase/store_use_cases/electronics_usecase.dart';
 import '../domain/usecase/store_use_cases/jewelery_usecase.dart';
 import '../domain/usecase/store_use_cases/men_clothing_usecase.dart';
@@ -26,11 +26,12 @@ import '../domain/usecase/store_use_cases/products_use_case.dart';
 import '../domain/usecase/store_use_cases/women_clothing_usecase.dart';
 import '../presentation/electronics/viewmodel/electronics_viewmodel.dart';
 import '../presentation/jewelery/viewmodel/jewelery_viewmodel.dart';
+// import '../presentation/main/pages/home/viewmodel/home_viewmodel.dart';
 import '../presentation/main/pages/home/viewmodel/home_viewmodel.dart';
 import '../presentation/men_clothing/viewmodel/men_clothing_viewmodel.dart';
-import '../presentation/products/viewmodel/products_viewmodel.dart';
+// import '../presentation/products/viewmodel/products_viewmodel.dart';
 import '../presentation/regiser/viewmodel/register_viewmodel.dart';
-import '../presentation/store_details/viewmodel/store_details_viewmodel.dart';
+// import '../presentation/store_details/viewmodel/store_details_viewmodel.dart';
 import '../presentation/women_clothing/viewmodel/women_clothing_viewmodel.dart';
 
 final instance = GetIt.instance;
@@ -98,30 +99,30 @@ initRegisterModule() {
   }
 }
 
+// initHomeModule() {
+//   if (!GetIt.I.isRegistered<HomeUseCase>()) {
+//     instance.registerFactory<HomeUseCase>(() =>
+//         HomeUseCase(instance()));
+//     instance.registerFactory<HomeViewModel>(() =>
+//         HomeViewModel(instance()));
+//   }
+// }
+//
+// initStoreDetailsModule() {
+//   if (!GetIt.I.isRegistered<StoreDetailsUseCase>()) {
+//     instance.registerFactory<StoreDetailsUseCase>(() =>
+//         StoreDetailsUseCase(instance()));
+//     instance.registerFactory<StoreDetailsViewModel>(() =>
+//         StoreDetailsViewModel(instance()));
+//   }
+// }
+
 initHomeModule() {
-  if (!GetIt.I.isRegistered<HomeUseCase>()) {
-    instance.registerFactory<HomeUseCase>(() =>
-        HomeUseCase(instance()));
-    instance.registerFactory<HomeViewModel>(() =>
-        HomeViewModel(instance()));
-  }
-}
-
-initStoreDetailsModule() {
-  if (!GetIt.I.isRegistered<StoreDetailsUseCase>()) {
-    instance.registerFactory<StoreDetailsUseCase>(() =>
-        StoreDetailsUseCase(instance()));
-    instance.registerFactory<StoreDetailsViewModel>(() =>
-        StoreDetailsViewModel(instance()));
-  }
-}
-
-initProductsModule() {
   if (!GetIt.I.isRegistered<ProductsUseCase>()) {
     instance.registerFactory<ProductsUseCase>(() =>
         ProductsUseCase(instance()));
-    instance.registerFactory<ProductsViewModel>(() =>
-        ProductsViewModel());
+    instance.registerFactory<HomeViewModel>(() =>
+        HomeViewModel(instance()));
         // ProductsViewModel(instance()));
   }
 }

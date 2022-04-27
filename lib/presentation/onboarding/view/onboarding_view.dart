@@ -83,7 +83,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   },
                   child: Text(
                     AppStrings.skip.tr(),
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: Theme.of(context).textTheme.titleLarge,
                     textAlign: TextAlign.end,
                   ),
                 ),
@@ -100,7 +100,17 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   //widgets indicator and arrows
   Widget _getBottomSheetWidget(SliderViewObject sliderViewObject){
     return Container(
-      color: ColorManager.primary,
+      // color: ColorManager.primary,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
+          colors: [
+            ColorManager.primary,
+            ColorManager.primary2
+          ],
+        ),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -179,13 +189,13 @@ class OnBoardingPage extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        const SizedBox(height: AppSize.s40,),
+        const SizedBox(height: AppSize.s28,),
         Padding(
           padding: const EdgeInsets.all(AppPadding.p8),
           child: Text(
             _sliderObject.title,
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.displayLarge,
+            style: Theme.of(context).textTheme.displaySmall,
           ),
         ),
         Padding(
@@ -193,11 +203,11 @@ class OnBoardingPage extends StatelessWidget {
           child: Text(
             _sliderObject.subTitle,
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.headlineMedium,
+            style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
-        const SizedBox(height: AppSize.s60,),
-        SvgPicture.asset(_sliderObject.image),
+        const SizedBox(height: AppSize.s20,),
+        Expanded(child: SvgPicture.asset(_sliderObject.image)),
       ],
     );
   }

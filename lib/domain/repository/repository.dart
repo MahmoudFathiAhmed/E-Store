@@ -15,6 +15,6 @@ abstract class Repository{
   Future <Either<Failure, Products>> getMenClothing();
   Future <Either<Failure, Products>> getWomenClothing();
 
-  Future <Either<Failure, HomeObject>> getHomeData();
-  Future <Either<Failure, StoreDetails>> getStoreDetails();
+  // Future <Either<Failure, HomeObject>> getHomeData();
+  // Future <Either<Failure, StoreDetails>> getStoreDetails();
 }

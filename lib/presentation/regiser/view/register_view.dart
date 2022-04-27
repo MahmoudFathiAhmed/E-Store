@@ -102,7 +102,7 @@ class _RegisterViewState extends State<RegisterView> {
           key: _formKey,
           child: Column(
             children: [
-              const Center(child: Image(image: AssetImage(ImageAssets.splashLogo),)),
+              const Center(child: Image(image: AssetImage(ImageAssets.splashIcon),)),
               const SizedBox(height: AppSize.s28,),
               Padding(
                 padding: const EdgeInsets.only(left: AppPadding.p28, right: AppPadding.p28),
@@ -117,6 +117,7 @@ class _RegisterViewState extends State<RegisterView> {
                           labelText: AppStrings.username.tr(),
                           errorText: snapshot.data
                       ),
+                      style: Theme.of(context).textTheme.labelSmall,
                     );
                   },
                 ),
@@ -155,6 +156,7 @@ class _RegisterViewState extends State<RegisterView> {
                                   labelText: AppStrings.mobileNumber.tr(),
                                   errorText: snapshot.data
                               ),
+                              style: Theme.of(context).textTheme.labelSmall,
                             );
                           },
                         ),
@@ -177,6 +179,7 @@ class _RegisterViewState extends State<RegisterView> {
                           labelText: AppStrings.emailHint.tr(),
                           errorText: snapshot.data
                       ),
+                      style: Theme.of(context).textTheme.labelSmall,
                     );
                   },
                 ),
@@ -195,6 +198,7 @@ class _RegisterViewState extends State<RegisterView> {
                           labelText: AppStrings.password.tr(),
                           errorText: snapshot.data
                       ),
+                      style: Theme.of(context).textTheme.labelSmall,
                     );
                   },
                 ),
@@ -250,7 +254,7 @@ class _RegisterViewState extends State<RegisterView> {
                   },
                   child: Text(
                     AppStrings.alreadyHaveAccount.tr(),
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: Theme.of(context).textTheme.labelSmall,
                   ),
                 ),
               ),
@@ -269,7 +273,9 @@ class _RegisterViewState extends State<RegisterView> {
             ListTile(
               trailing: const Icon(Icons.arrow_forward),
               leading: const Icon(Icons.camera),
-              title: Text(AppStrings.photoGallery.tr()),
+              title: Text(AppStrings.photoGallery.tr(),
+              style: Theme.of(context).textTheme.labelSmall,
+              ),
               onTap: (){
                 _imageFromGallery();
                 Navigator.of(context).pop();
@@ -278,7 +284,9 @@ class _RegisterViewState extends State<RegisterView> {
             ListTile(
               trailing: const Icon(Icons.arrow_forward),
               leading: const Icon(Icons.camera_alt_outlined),
-              title: Text(AppStrings.photoCamera.tr()),
+              title: Text(AppStrings.photoCamera.tr(),
+              style: Theme.of(context).textTheme.labelSmall,
+              ),
               onTap: (){
                 _imageFromCamera();
                 Navigator.of(context).pop();
