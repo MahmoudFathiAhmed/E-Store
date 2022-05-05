@@ -1,4 +1,12 @@
 // import '../../../../../presentation/common/state_renderer/state_renderer_impl.dart';
+import 'package:estore/domain/model/models.dart';
+import 'package:estore/presentation/common/state_renderer/state_renderer_impl.dart';
+import 'package:estore/presentation/resources/assets_manager.dart';
+import 'package:estore/presentation/resources/values_manager.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 import '../../../../../presentation/main/pages/home/viewmodel/home_viewmodel.dart';
 // import '../../../../../presentation/resources/color_manager.dart';
 // import '../../../../../presentation/resources/routes_manager.dart';
@@ -8,6 +16,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../../../../app/di.dart';
 // import '../../../../../domain/model/models.dart';
+import '../../../../resources/color_manager.dart';
 import '../../../../resources/strings_manager.dart';
 
 class HomePage extends StatefulWidget {
@@ -19,6 +28,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final HomeViewModel _viewModel = instance<HomeViewModel>();
+  final TextEditingController _searchEditingController = TextEditingController();
+  final _searchFormKey =GlobalKey();
 
   _bind(){
     _viewModel.start();
@@ -32,9 +43,10 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return  Center(
-      child: Text(AppStrings.home.tr()),
+    return SingleChildScrollView(
+      child: _getContentWidget(),
     );
+
     //   Center(
     //   child: SingleChildScrollView(
     //     child: StreamBuilder<FlowState>(
@@ -67,7 +79,8 @@ class _HomePageState extends State<HomePage> {
   //     },
   //   );
   // }
-  //
+
+
   // Widget _getBannerWidget(List<BannerAd>? banners){
   //   if(banners != null){
   //     return CarouselSlider(items: banners.map((banner) => SizedBox(
@@ -210,9 +223,134 @@ class _HomePageState extends State<HomePage> {
   //   }
   // }
 
+  Widget _getContentWidget(){
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _getSearchFormField(),
+            const SizedBox(height: AppSize.s37,),
+            _getSectionHeader(header: AppStrings.categories.tr()),
+            const SizedBox(height: AppSize.s14,),
+            _getStoreCategories(),
+            const SizedBox(height: AppSize.s37,),
+            _getSectionHeader(header: AppStrings.featured.tr()),
+          ],
+        );
+  }
+
+  Widget _getSearchFormField(){
+    return Padding(
+      padding: const EdgeInsets.only(left: AppPadding.p16, right: AppPadding.p16),
+      child: TextField(
+        key: _searchFormKey,
+        controller: _searchEditingController,
+        keyboardType: TextInputType.text,
+        decoration: InputDecoration(
+          hintText: AppStrings.searchYourProduct.tr(),
+          prefixIcon: SvgPicture.asset(
+              ImageAssets.search,
+              fit: BoxFit.scaleDown),
+        ),
+      ),
+    );
+  }
+
+  Widget _getSectionHeader({required String header}){
+    return Padding(
+      padding: const EdgeInsets.only(left: AppPadding.p28, right: AppPadding.p10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            header,
+            style: Theme.of(context).textTheme.headlineLarge,
+          ),
+          TextButton(
+            onPressed: (){},
+            child: Text(AppStrings.seeAll.tr(),
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),),
+        ],),
+    );
+  }
+
+  Widget _getCategoryCard({
+    required String category,
+    required String image,
+    required Color color,
+    required VoidCallback onTap }){
+    return Padding(
+      padding: const EdgeInsets.only(right: AppPadding.p15),
+      child: InkWell(
+        onTap: onTap,
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(AppSize.s5),
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(AppSize.s5),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Image.asset(
+                  image,
+                  fit: BoxFit.cover,
+                  width: AppSize.s114,
+                  height: AppSize.s65,
+                  color: color.withOpacity(AppSize.s0_75),
+                  colorBlendMode: BlendMode.srcOver,
+                ),
+                Text(category,style: Theme.of(context).textTheme.bodyLarge,),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _getStoreCategories(){
+    return Padding(
+      padding: const EdgeInsets.only(left: AppPadding.p22),
+      child: Container(
+        height: AppSize.s65,
+        child: ListView(
+          scrollDirection: Axis.horizontal,
+          children: [
+            _getCategoryCard(
+              image: ImageAssets.women,
+              color: ColorManager.lightPrimary,
+              category: AppStrings.women.tr(),
+              onTap: (){}
+            ),
+            _getCategoryCard(
+              image: ImageAssets.men,
+              color: ColorManager.rose,
+              category: AppStrings.men.tr(),
+              onTap: (){}
+            ),
+            _getCategoryCard(
+              image: ImageAssets.jewelry,
+              color: ColorManager.green,
+              category: AppStrings.jewelry.tr(),
+              onTap: (){}
+            ),
+            _getCategoryCard(
+              image: ImageAssets.electronics,
+              color: ColorManager.purple,
+              category: AppStrings.electronics.tr(),
+              onTap: (){}
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+
   @override
   void dispose() {
-    // _viewModel.dispose();
+    _viewModel.dispose();
     super.dispose();
   }
 }

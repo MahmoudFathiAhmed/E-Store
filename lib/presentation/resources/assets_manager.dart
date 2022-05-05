@@ -7,6 +7,8 @@ class ImageAssets{
   static const String men = "$imagePath/men.png";
   static const String women = "$imagePath/women.png";
   static const String creditCard = "$imagePath/credit_card.png";
+  static const String jewelry = "$imagePath/jewelry.png";
+  static const String electronics = "$imagePath/electronics.png";
 
   static const String onBoardingLogo1 = "$imagePath/onboarding_logo1.svg";
   static const String onBoardingLogo2 = "$imagePath/onboarding_logo2.svg";
@@ -41,6 +43,7 @@ class ImageAssets{
   static const String search = "$imagePath/search.svg";
   static const String like = "$imagePath/like.svg";
   static const String likeIcon = "$imagePath/like_icon.svg";
+  static const String divider = "$imagePath/divider.svg";
 
 }
 

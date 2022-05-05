@@ -97,6 +97,11 @@ class AppStrings {
   static const String favourite = "favourite";
   static const String orders = "orders";
   static const String orderAgain = "order_again";
+  static const String language = "language";
+  static const String men = "men";
+  static const String women = "women";
+  static const String electronics = "electronics";
+  static const String jewelry = "jewelry";
 
   // error handler
   static const String badRequestError = "bad_request_error";

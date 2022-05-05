@@ -4,7 +4,7 @@ class ColorManager{
   static Color primary = const Color(0xff667EEA);
   static Color primary2 = const Color(0xff64B6FF);
   static Color deepBlue = const Color(0xff374ABE);
-  static Color rose = const Color(0xffFF5858);
+  static Color rose = const Color(0xFFFF5858);
   static Color rose2 = const Color(0xffFB5895);
   static Color green = const Color(0xff43E97B);
   static Color green2 = const Color(0xff38F9D7);

@@ -23,10 +23,13 @@ ThemeData getApplicationTheme(){
     //appbar theme
     appBarTheme: AppBarTheme(
       centerTitle: true,
-      color: ColorManager.primary,
-      elevation: AppSize.s4,
+      backgroundColor: ColorManager.white,
+      iconTheme: IconThemeData(
+        color: ColorManager.grey6,
+      ),
+      elevation: AppSize.s0,
       shadowColor: ColorManager.lightPrimary,
-      titleTextStyle: getRegularStyle(fontSize: FontSize.s16,color: ColorManager.white)
+      titleTextStyle: getRegularStyle(fontSize: FontSize.s16,color: ColorManager.grey5)
     ),
 
     //button theme
@@ -63,7 +66,7 @@ ThemeData getApplicationTheme(){
       labelMedium: getRegularStyle(color: ColorManager.primary,fontSize: FontSize.s16),
       labelSmall: getSemiBoldStyle(color: ColorManager.primary,fontSize: FontSize.s15),
       bodyLarge: getSemiBoldStyle(color: ColorManager.white,fontSize: FontSize.s14),
-      bodyMedium: getRegularStyle(color: ColorManager.grey,fontSize: FontSize.s14),
+      bodyMedium: getRegularStyle(color: ColorManager.grey4,fontSize: FontSize.s14),
       bodySmall: getRegularStyle(color: ColorManager.primary,fontSize: FontSize.s10),
     ),
 

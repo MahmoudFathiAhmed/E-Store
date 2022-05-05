@@ -86,6 +86,8 @@ flutter:
     - assets/images/splash_icon.png
     - assets/images/men.png
     - assets/images/women.png
+    - assets/images/jewelry.png
+    - assets/images/electronics.png
     - assets/images/onboarding_logo1.svg
     - assets/images/onboarding_logo2.svg
     - assets/images/onboarding_logo3.svg
@@ -115,6 +117,7 @@ flutter:
     - assets/images/search.svg
     - assets/images/like.svg
     - assets/images/like_icon.svg
+    - assets/images/divider.svg
     - assets/json/empty.json
     - assets/json/error.json
     - assets/json/loading.json

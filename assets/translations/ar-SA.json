@@ -112,5 +112,10 @@
   "my_cart": "عربتي",
   "favourite": "المفضله",
   "orders": "الطلبات",
-  "order_again": "اطلب مجددا"
+  "order_again": "اطلب مجددا",
+  "language": "اللغه",
+  "men": "رجال",
+  "women": "سيدات",
+  "electronics": "الكترونيات",
+  "jewelry": "مجوهرات"
 }

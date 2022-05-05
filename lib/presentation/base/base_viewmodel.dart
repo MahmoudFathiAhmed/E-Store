@@ -28,6 +28,5 @@ abstract class BaseViewModelInputs{
 }
 
 abstract class BaseViewModelOutputs{
-  //will be implemented later
   Stream<FlowState> get outputState;
 }
